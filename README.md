@@ -59,4 +59,8 @@ Note:
 
 ### Categorical Features
 Kita akan melihat setiap categorical features dan pengaruhnya ke keputusan untuk melakukan deposit atau tidak (yes, no).
+<img src=https://github.com/Mare0102/Capstone_3/blob/main/cat_feat.png>
 
+### Numerical Features
+Kita juga akan melihat setiap numerical features dan pengaruhnya ke keputusan untuk melakukan deposit atau tidak (yes, no).
+<img src=https://github.com/Mare0102/Capstone_3/blob/main/num_feat.png>
