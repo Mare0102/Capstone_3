@@ -81,11 +81,72 @@ Kita akan melihat lebih jauh pengaruh empat variabel (job, month, age, balance) 
 <img src=https://github.com/Mare0102/Capstone_3/blob/main/balance_deposit.png>
 
 
+## Model Performance
+Kita mencoba beberapa model klasifikasi, dimana yang terbaik adalah RandomForestClassification
 
 
+| model	| roc_auc_mean | roc_auc_std |
+| -- | -- | -- |
+| RandomForestClassifier(random_state=42) |	0.723484 | 0.011954 |
+| XGBClassifier(base_score=None, booster=None, c...	 | 0.722544 |	0.012995 |
+| LogisticRegression(random_state=42)	| 0.684064 | 0.015894 |
+| KNeighborsClassifier() | 0.665282	| 0.007403 |
+| DecisionTreeClassifier(random_state=42) |	0.607645 | 0.006979 |
+
+## Model Benchmarking: Test Data
+Kita coba model tersebut ke data test, ternyata yang terbaik adalah XGBClassifier, Nilai kedua model tersebut di tabel atas juga tidak berbeda jauh. Oleh sebab itu kita akan menggunakan XGBClassifier untuk dituning.
+
+| model | roc_auc |
+| -- | -- |
+| XGBClassifier |	0.688658 |
+| RandomForestClassifier |	0.685601 |
+| LogisticRegression |	0.652993 |
+| KNeighborsClassifier |	0.636876 |
+| DecisionTreeClassifier |	0.605800 |
 
 
+## Hyperparameter Tuning
+Setelah dituning kita mendapatkan bahwa nilai roc_auc naik dari 0.72 menjadi 0.74. Nilai ini bisa diperbaiki lagi dengan menambah variabel tuningnya.
 
+Parameter terbaik adalah:
+- subsample : 0.6
+- reg_alpha : 0.001
+- random_state : 42
+- n_estimators : 200
+- max_depth : 8
+- learning_rate : 0.06999999999
+- gamma : 9
 
+## Classification Report
 
+Classification Report Tuned XGB : 
+               precision    recall  f1-score   support
+
+           0       0.69      0.87      0.77       815
+           1       0.80      0.57      0.67       746
+
+    accuracy                           0.73      1561
+   macro avg       0.74      0.72      0.72      1561
+weighted avg       0.74      0.73      0.72      1561
+
+Berdasarkan hasil classification report, model kita mampu memfilter 87% calon customer yang tidak tertarik  dan tidak akan kita approach, kita juga bisa mendapatkan 57% calon customer yang tertarik untuk membuka deposit dari keseluruhan calon customer yang tertarik.
+
+# **Conclusion**
+
+Tujuan utama dari project ini adalah untuk bisa lebih mendalami faktor yang mempengaruhi seorang calon customer untuk membuka deposit, sehingga meningkatkan efektifitas campaign.
+
+Berdasarkan dari analisa dasar diatas, target customer yang paling responsif adalah yang memiliki ciri-ciri dibawah:
+- Pekerjaannya student atau retired
+- Berusia <30 atau >60
+- Mempunyai balance diatas 1000, semakin tinggi semakin tinggi juga peluangnya
+
+Dengan melakukan analisa lebih lanjut dengan menggunakan XGBClassifier kita bisa memprediksi peluang seorang customer akan membuka deposit atau tidak sebelum dilakukan campaignnya. Kita mendapatkan informasi tambahan, dimana housing loan dan pdays sangat mempengaruhi keputusan customer untuk membuka deposit atau tidak.
+</br>
+</br>
+
+# **Recommendation**
+- Perusahaan bisa melakukan campaign lebih tinggi pada bulan-bulan berikut : Maret, September, Oktober, dan Desember. Dimana rate untuk pembukaan lebih tinggi
+- Perusahaan bisa mendapatkan data pribadi lebih banyak dari calon customer sebelum melakukan campaign, namun hanya data-data yang tidak mengganggu kenyamanan customer (contoh: status pernikahan, jumlah tanggungan, kendaraan pribadi, dll). Nantinya bisa dicoba lagi pada project berikutnya agar bisa mendapatkan model yang lebih baik
+- Untuk memperbaiki model ini, disarankan untuk menggunakan GridSearchCV dalam melakukan Hyperparameter Tuning agar bisa mendapatkan parameter yang benar-benar terbaik (belum bisa pada project kali ini karena time constraint, untuk running >8 jam)
+- Bisa mencoba dengan menggunakan model lain (contoh: SVM, Naive Bayes)
 
