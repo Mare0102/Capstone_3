@@ -120,14 +120,14 @@ Parameter terbaik adalah:
 ## Classification Report
 
 Classification Report Tuned XGB : 
-               precision    recall  f1-score   support
-
-           0       0.69      0.87      0.77       815
-           1       0.80      0.57      0.67       746
-
-    accuracy                           0.73      1561
-   macro avg       0.74      0.72      0.72      1561
-weighted avg       0.74      0.73      0.72      1561
+|  | precision | recall | f1-score | support |
+|--|--|--|--|--|
+| 0 | 0.69 | 0.87 | 0.77 | 815 |
+| 1 | 0.80 | 0.57 | 0.67 | 746 |
+|   |      |      |      |     |
+| accuracy |      | 0.73 | 1561 |
+| macro avg | 0.74 |  0.72 | 0.72 | 1561 |
+| weighted avg | 0.74 | 0.73 | 0.72 | 1561 |
 
 Berdasarkan hasil classification report, model kita mampu memfilter 87% calon customer yang tidak tertarik  dan tidak akan kita approach, kita juga bisa mendapatkan 57% calon customer yang tertarik untuk membuka deposit dari keseluruhan calon customer yang tertarik.
 
