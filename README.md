@@ -64,3 +64,28 @@ Kita akan melihat setiap categorical features dan pengaruhnya ke keputusan untuk
 ### Numerical Features
 Kita juga akan melihat setiap numerical features dan pengaruhnya ke keputusan untuk melakukan deposit atau tidak (yes, no).
 <img src=https://github.com/Mare0102/Capstone_3/blob/main/num_feat.png>
+
+## Campaign Efficiency Analysis Based on Job, Month, Age, and Balance
+Kita akan melihat lebih jauh pengaruh empat variabel (job, month, age, balance) ke keputusan deposit, dibandingkan dengan contact rate (seberapa banyak kontak dilakukan dengan customer yang ada di grup tersebut).
+
+### By Job
+<img src =https://github.com/Mare0102/Capstone_3/blob/main/job_deposit.png>
+
+### By Month
+<img src=https://github.com/Mare0102/Capstone_3/blob/main/month_deposit.png>
+
+### By Age
+<img src=https://github.com/Mare0102/Capstone_3/blob/main/age_deposit.png>
+
+### By Balance
+<img src=https://github.com/Mare0102/Capstone_3/blob/main/balance_deposit.png>
+
+
+
+
+
+
+
+
+
+
