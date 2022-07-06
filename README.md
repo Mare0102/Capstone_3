@@ -150,3 +150,5 @@ Dengan melakukan analisa lebih lanjut dengan menggunakan XGBClassifier kita bisa
 - Untuk memperbaiki model ini, disarankan untuk menggunakan GridSearchCV dalam melakukan Hyperparameter Tuning agar bisa mendapatkan parameter yang benar-benar terbaik (belum bisa pada project kali ini karena time constraint, untuk running >8 jam)
 - Bisa mencoba dengan menggunakan model lain (contoh: SVM, Naive Bayes)
 
+
+Tableau Link: https://public.tableau.com/views/BankMarketingCampaign_16571264706070/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link
